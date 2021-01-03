@@ -1,0 +1,23 @@
+.p_content {
+    padding: 8px 12px;
+}
+.d_block {
+    display: block;
+}
+.d_none {
+    display: none;
+}
+.time {
+    font-size: 12px;
+    color: #8e8e8e;
+}
+.heart {
+    fill: transparent;
+    stroke: #737373;
+    stroke-width: 4;
+    display: block;
+}
+.heart__fill {
+    fill: red;
+    stroke-width: 0;
+}

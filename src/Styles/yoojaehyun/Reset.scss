@@ -24,6 +24,12 @@ ol, ul {
 input,button{
 	outline: none;
 	border:0;
+	background:none;
+}
+textarea{
+	outline: none;
+	border:none;
+	resize: none;
 }
 a{
 	text-decoration: none;
