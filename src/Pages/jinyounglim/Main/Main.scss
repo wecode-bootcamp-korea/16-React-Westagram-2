@@ -1,0 +1,53 @@
+@import "../../../Styles/jinyounglim/Common.scss";
+
+body {
+  font-size: 1.4rem;
+}
+
+main {
+  max-width: 935px;
+  margin: 84px auto 30px;
+  position: relative;
+}
+
+/* buttons */
+
+.user_profile {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background-color: $bg-color;
+  border: $border-gray;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* reusable box */
+
+.user_info {
+  display: flex;
+  align-items: center;
+}
+
+.sub_wr {
+  line-height: 13px;
+  text-align: left;
+}
+
+.user_subtxt {
+  margin: 3px 0 0 14px;
+  display: block;
+  color: $sub-color;
+  font-size: 1.2rem;
+}
+
+.user_list li {
+  padding: 8px 0;
+  position: relative;
+}
+
+.user_id {
+  margin: 0 0 0 14px;
+  display: inline-block;
+  color: $id-color;
+}
