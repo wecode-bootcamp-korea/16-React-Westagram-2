@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import "../../../Styles/yoojaehyun/Reset.scss";
-import "../Login/Login.scss";
+import '../../../Styles/yoojaehyun/Reset.scss';
+import '../Login/Login.scss';
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userId: "",
-            password: "",
+            userId: '',
+            password: '',
             hiddenPw: true,
         };
     }
@@ -24,62 +24,63 @@ class Login extends Component {
     checkValidation = (event) => {
         event.preventDefault();
         const { userId, password } = this.state;
-        const checkId = userId.includes("@");
+        const checkId = userId.includes('@');
         const checkPw = password.length >= 4;
-        if (checkId && checkPw) {
-            alert("로그인 성공!");
-            this.props.history.push("/main");
-        }
+
         if (!checkId) {
-            alert("아이디는 @를 포함해야 합니다.");
+            alert('아이디는 @를 포함해야 합니다.');
         }
         if (!checkPw) {
-            alert("비밀번호는 4자리 이상이여야 합니다.");
+            alert('비밀번호는 4자리 이상이여야 합니다.');
+        }
+        if (checkId && checkPw) {
+            alert('로그인 성공!');
+            this.props.history.push('/main');
         }
     };
 
     render() {
-        console.log("id", this.state.userId, "pw", this.state.password);
+        console.log('id', this.state.userId, 'pw', this.state.password);
         const activeBtn =
             (this.state.userId.length && this.state.password.length) > 3;
         return (
-            <div className="Login">
-                <div className="login__wrap">
+            <div className='Login'>
+                <div className='login__wrap'>
                     <header>
-                        <h1 className="title">Westagram</h1>
+                        <h1 className='title'>Westagram</h1>
                     </header>
-                    <form className="form__wrap">
+                    <form className='form__wrap'>
                         <input
-                            id="userId"
-                            type="text"
+                            id='userId'
+                            type='text'
+                            placeholder="휴대폰번호,이메일.. "
                             value={this.state.userId}
                             onChange={this.handleLoginInfo}
                         />
-                        <div className="password__wrap">
+                        <div className='password__wrap'>
                             <input
-                                id="password"
-                                type={this.state.hiddenPw ? "password" : "text"}
+                                id='password'
+                                placeholder='비밀번호를 입력해 주세요.'
+                                type={this.state.hiddenPw ? 'password' : 'text'}
                                 value={this.state.password}
                                 onChange={this.handleLoginInfo}
                             />
                             <span
-                                className="showHide"
+                                className='showHide'
                                 onClick={this.showPassword}>
-                                {this.state.hiddenPw ? "Show" : "Hide"}
+                                {this.state.hiddenPw ? 'Show' : 'Hide'}
                             </span>
                         </div>
                         <button
-                            type="button"
+                            type='button'
                             onClick={this.checkValidation}
                             onKeyUp={this.checkValidation}
-                            className={`on__Submit  ${
-                                activeBtn ? "active" : ""
-                            }`}>
+                            className={`on__Submit  ${activeBtn ? 'active' : '' }`}>
                             로그인
                         </button>
                         <hr />
                     </form>
-                    <Link to="/" className="find__password">
+                    <Link to='/' className='find__password'>
                         비밀번호를 잊으셨나요?
                     </Link>
                 </div>
