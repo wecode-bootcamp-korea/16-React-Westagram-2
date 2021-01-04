@@ -54,7 +54,7 @@ export class LoginLim extends React.Component {
                 {this.state.hiddenPw ? "Show" : "Hide"}
               </span>
             </div>
-            <button className={activateBtn ? "active" : ""} onClick={this.checkValidation} onKeyup={this.checkValidation}>
+            <button className={activateBtn ? "active" : ""} onClick={this.checkValidation} onKeyUp={this.checkValidation}>
               로그인
             </button>
           </form>

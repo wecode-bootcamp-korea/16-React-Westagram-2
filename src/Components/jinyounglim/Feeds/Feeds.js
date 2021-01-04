@@ -23,8 +23,8 @@ export class Feeds extends React.Component {
       cmtList: this.state.cmtList.concat([
         {
           id: Math.random(),
-          userId: "jinyoung",
-          cmt: this.state.cmtInput,
+          userName: "jinyoung",
+          content: this.state.cmtInput,
         },
       ]),
       cmtInput: "",
@@ -64,8 +64,11 @@ export class Feeds extends React.Component {
             <button className="btn_txt_more">더보기</button>
           </div>
           <p className="cmt_all">댓글 30개 모두 보기</p>
-          <Comment cmtList={this.state.cmtList} />
-
+          <ul className="cmt_list feeds_txt">
+            {this.state.cmtList.map(comment => {
+              return <Comment userName={comment.userName} content={comment.content} key={comment.id} />;
+            })}
+          </ul>
           <i className="txt_time">53분 전</i>
         </div>
         <form className="cmt_write">
