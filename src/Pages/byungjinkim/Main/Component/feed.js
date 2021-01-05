@@ -24,7 +24,7 @@ class feed extends Component {
               </div>
               <div className="box">
                 <div className="img_space">
-                  <img className="img_space_radius" src="../Image/me.jpg" width="27px" alt="내 사진" />
+                  <img className="img_space_radius" src="./Images/byungjinkim/my.jpg" width="27px" alt="내 사진" />
                 </div>
                 <div className="inner_box">
                   <span className="name">jin</span>
@@ -32,7 +32,7 @@ class feed extends Component {
                 </div>
                 </div>
                 <div className="left_box">
-                  <img src className="left_box" alt="이미지"/>
+                  <img src="./Images/byungjinkim/ruru.jpg" className="left_box" alt="이미지"/>
                 </div>
                 <div className="left_under_box_set">
                   <div className="left_under_box_set left_under_box">

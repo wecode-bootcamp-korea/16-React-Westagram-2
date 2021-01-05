@@ -69,7 +69,7 @@ class LoginKim extends React.Component{
       // 버튼 활성화 조건 변수화
       const {id_input, pw_input} = this.state;
       const activeBtn =
-      (id_input.length && pw_input.length) !=0;
+      (id_input.length && pw_input.length) !==0;
      
       
       return (
@@ -77,10 +77,10 @@ class LoginKim extends React.Component{
           <main className="main_westa">
             <article className="art">
               <div className="main_img">
-                <img src="../image/1.jpg" className="image_ch" alt="이미지1" />
-                <img src="../image/2.jpg" className="image_ch" alt="이미지2"/>
-                <img src="../image/3.jpg" className="image_ch" alt="이미지3"/>
-                <img src="../image/4.jpg" className="image_ch" alt="이미지4"/>
+                <img src="./Images/byungjinkim/1.jpg" className="image_ch" alt="이미지1" />
+                <img src="./Images/byungjinkim/2.jpg" className="image_ch" alt="이미지2"/>
+                <img src="./Images/byungjinkim/3.jpg" className="image_ch" alt="이미지3"/>
+                <img src="./Images/byungjinkim/4.jpg" className="image_ch" alt="이미지4"/>
               </div>
               <div className="art login_box">
                 <div className="top_box">
