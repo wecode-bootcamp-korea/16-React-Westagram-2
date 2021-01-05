@@ -1,14 +1,14 @@
 import React, {Component , Fragment} from 'react';
 
+
 class Comment extends Component {
   render() {
+    const { comment, name } = this.props;
+
     return (
-      <Fragment>
-      <div className="id_box">
-        <div className="comment_write"></div>
-          <div/>
-        <div className="date_box" /></div>
-      </Fragment>
+      <div className="Comment" >
+        <div className="cmt_value">{name} : {comment}</div>
+      </div>
     );
   }
 }
