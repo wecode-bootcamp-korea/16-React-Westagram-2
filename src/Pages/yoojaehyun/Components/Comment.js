@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { feedSvg } from '../data/config';
+
 class Comment extends Component {
     render() {
         const { userName, content } = this.props.list;

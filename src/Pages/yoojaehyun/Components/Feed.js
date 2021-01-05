@@ -11,14 +11,16 @@ class Feed extends Component {
             commentValue: '',
         };
     }
+    commentInput = React.createRef();
     componentDidMount() {
         this.setState({
             commentList: COMMENT,
         });
     }
     handleCommentValue = (event) => {
+        const content = this.commentInput.current.value;
         this.setState({
-            commentValue: event.target.value,
+            commentValue: content,
         });
     };
     addComment = (event) => {
@@ -37,9 +39,13 @@ class Feed extends Component {
             commentValue: '',
         });
     };
-
+    handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            this.addComment();
+        }
+    };
     render() {
-        const { commentList, commentValue } = this.state;
+        const { commentList } = this.state;
         const lengthValue = this.state.commentValue.length > 3;
         return (
             <div className='left__feed'>
@@ -101,14 +107,16 @@ class Feed extends Component {
                         action=''
                         className='form__area'
                         onSubmit={this.addComment}>
-                        <textarea
+                        <input
                             id='comment__input'
+                            ref={this.commentInput}
                             onChange={this.handleCommentValue}
-                            value={commentValue}
-                            placeholder='댓글 달기...'></textarea>
+                            placeholder='댓글 달기...'
+                        />
                         <button
                             type='button'
                             className={lengthValue ? 'onSubmit' : ''}
+                            onKeyPress={this.handleKeyPress}
                             onClick={this.addComment}>
                             게시
                         </button>
