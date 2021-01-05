@@ -9,7 +9,7 @@ class Followers extends Component {
         };
     }
     componentDidMount() {
-        fetch('http://localhost:3000/data/commentData.json', {
+        fetch('http://localhost:3000/data/FollowData.json', {
             method: 'GET',
         })
             .then((res) => res.json())

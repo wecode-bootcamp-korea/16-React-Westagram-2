@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { feedSvg } from '../data/config';
-import COMMENT from '../data/data';
 import Comment from './Comment';
 class Feed extends Component {
     constructor() {
@@ -9,18 +8,25 @@ class Feed extends Component {
         this.state = {
             commentList: [],
             commentValue: '',
+            isLiked: false,
         };
     }
-    commentInput = React.createRef();
     componentDidMount() {
-        this.setState({
-            commentList: COMMENT,
-        });
+        fetch('http://localhost:3000/data/Comment.json', {
+            method: 'GET',
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                if (res.status === '200') {
+                    this.setState({
+                        commentList: res.data.item.commentItem,
+                    });
+                }
+            });
     }
     handleCommentValue = (event) => {
-        const content = this.commentInput.current.value;
         this.setState({
-            commentValue: content,
+            commentValue: event.target.value,
         });
     };
     addComment = (event) => {
@@ -40,12 +46,24 @@ class Feed extends Component {
         });
     };
     handleKeyPress = (e) => {
+        if (this.state.commentValue === '') {
+            return;
+        }
         if (e.key === 'Enter') {
             this.addComment();
         }
     };
+    handleDelete = (comment) => {
+        const commentLists = this.state.commentList.filter(
+            (item) => item.id !== comment.id
+        );
+        this.setState({ commentList: commentLists });
+    };
+    isLikedToggle = (isLikeds) => {
+        console.log(`${isLikeds.isLiked}`)
+    };
     render() {
-        const { commentList } = this.state;
+        const { commentList, commentValue } = this.state;
         const lengthValue = this.state.commentValue.length > 3;
         return (
             <div className='left__feed'>
@@ -97,7 +115,14 @@ class Feed extends Component {
                 <div className='feed__comment__list p_content'>
                     <ul className='feed__items'>
                         {commentList.map((item) => {
-                            return <Comment key={item.id} list={item} />;
+                            return (
+                                <Comment
+                                    key={item.id}
+                                    list={item}
+                                    onHandleDelete={this.handleDelete}
+                                    isLikedHandle={this.isLikedToggle}
+                                />
+                            );
                         })}
                     </ul>
                     <span className='time'>57분전</span>
@@ -109,8 +134,8 @@ class Feed extends Component {
                         onSubmit={this.addComment}>
                         <input
                             id='comment__input'
-                            ref={this.commentInput}
                             onChange={this.handleCommentValue}
+                            value={commentValue}
                             placeholder='댓글 달기...'
                         />
                         <button

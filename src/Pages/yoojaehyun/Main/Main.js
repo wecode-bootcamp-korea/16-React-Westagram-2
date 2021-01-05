@@ -5,7 +5,7 @@ import '../../../Styles/yoojaehyun/Common.scss';
 import '../Main/Main.scss';
 
 import Feed from '../Components/Feed';
-import RightFeed from '../Components/RightFeed';
+import RightFeed from '../Components/RightFeed/RightFeed';
 import Follows from '../Components/Follows/Follows';
 
 class Main extends Component {
