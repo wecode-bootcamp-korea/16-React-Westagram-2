@@ -6,19 +6,29 @@
         "followsList":[
           {
             "id": 1,
-            "img": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/131205825_140559487608360_3914172670225456770_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=LHYa-iZ5R60AX_cnRQt&tp=1&oh=ca21fd7792a6bfea55cf1d497c311c50&oe=601C6DED",
+            "imgUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/131205825_140559487608360_3914172670225456770_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=LHYa-iZ5R60AX_cnRQt&tp=1&oh=ca21fd7792a6bfea55cf1d497c311c50&oe=601C6DED",
             "userName": "taeyeon__ss"
           },
 
           {
             "id": 2,
-            "img": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/132031366_144204600833172_1685182275368003989_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=Smub-YC8PK8AX8kDnHa&tp=1&oh=59a7aeb494dbb3f26b4c56fac4c48159&oe=601CFE52",
+            "imgUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/132031366_144204600833172_1685182275368003989_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=Smub-YC8PK8AX8kDnHa&tp=1&oh=59a7aeb494dbb3f26b4c56fac4c48159&oe=601CFE52",
             "userName": "seojuhyun_s"
           },
           {
             "id": 3,
-            "img": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/106913910_305824583797828_7994545747336793882_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=V5d1-0e06EwAX86n1Ji&tp=1&oh=0a5be4b4cd393098967f6d67df77c048&oe=601DE2D1",
+            "imgUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/106913910_305824583797828_7994545747336793882_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=V5d1-0e06EwAX86n1Ji&tp=1&oh=0a5be4b4cd393098967f6d67df77c048&oe=601DE2D1",
             "userName": "sooyaaa_"
+          },
+          {
+            "id":4,
+            "imgUrl":"https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/130865738_847770195990930_1679888451587691378_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=vg3IsMf3TvkAX9s8SFy&tp=1&oh=9a0f462e297b29c720749aca9fa2cc66&oe=601C0A04",
+            "userName": "yerin_the_genuine"
+          },
+          {
+            "id":5,
+            "imgUrl":"https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/131410874_138371911407913_481752322904825686_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=T2VtIjRlVVcAX86Fv_L&tp=1&oh=9ed83d804913496cea29709767de71f7&oe=601D200E",
+            "userName": "leehi_hi"
           }
       ]
     }

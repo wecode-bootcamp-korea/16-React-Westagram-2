@@ -6,7 +6,7 @@ import '../Main/Main.scss';
 
 import Feed from '../Components/Feed';
 import RightFeed from '../Components/RightFeed';
-import Followers from '../Components/Follows/Follows';
+import Follows from '../Components/Follows/Follows';
 
 class Main extends Component {
     render() {
@@ -15,9 +15,9 @@ class Main extends Component {
                 <Navbar />
                 <main className='main__container'>
                     <section className='feeds__container'>
-                        <Followers />
                         <div className='feeds'>
                             <article>
+                                <Follows />
                                 <Feed />
                             </article>
                             <article className='right__feed'>
