@@ -1,6 +1,7 @@
-import "./Login.scss";
 import React from 'react';
 import {Link} from 'react-router-dom';
+import '../../../Styles/byungjinkim/Reset.scss'
+
 
 
 class LoginKim extends React.Component{

@@ -3,6 +3,7 @@ import Feed from './Component/feed';
 import Nav from './Component/Nav';
 import COMMENT from './Component/data';
 import './Main.scss'
+import '../../../Styles/byungjinkim/Reset.scss'
 
 class MainKim extends Component {
   //state 초기화
@@ -46,7 +47,6 @@ class MainKim extends Component {
   }
 
   render() {
-    console.log("comment", this.state.comment);
     return (
     <main className="MainKim">
       <Nav />
