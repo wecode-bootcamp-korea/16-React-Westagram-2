@@ -1,5 +1,7 @@
 .main {
-
+  width: 1000px;
+  margin: 0 auto;
+  
   .header{
     display: flex;
     justify-content: center;
@@ -7,7 +9,7 @@
     height: 54px;
     background-color: #fff;
 
-    .naviBar {
+    .Navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -67,11 +69,12 @@
       }
     }
   }
-  .mainCont{
+  // Navbar
+
+  .LeftCont{
     position: relative;
     width: 612px;
     height: 118px;
-    left: 450px;
     top: 45px;
     background-color: #fff;
     border-radius: 3px;
@@ -173,7 +176,7 @@
       height: 645px;
     }
   }
-  .heart {
+  .CommentIcon {
     position: relative;
     display: flex;
     text-align: center;
@@ -255,6 +258,8 @@
       border: solid 0px;
     }
   }
+  //LeftCont
+  
   .rightCont {
     position: fixed;
     left: 1100px;

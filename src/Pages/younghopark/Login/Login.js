@@ -2,10 +2,6 @@ import './Login.scss';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-
-
-
-
 class LoginPark extends Component {
   constructor() {
     super();
@@ -61,8 +57,7 @@ class LoginPark extends Component {
   render() {
     const activateBtn =
      (this.state.id.length && this.state.password.length)  != 0;
-  
-    console.log("id", this.state.id, "pw", this.state.password);
+
     return (
       <div className="Login">
         <div className ="container">
