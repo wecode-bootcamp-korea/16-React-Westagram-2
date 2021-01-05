@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../../../Styles/byungjinkim/Reset.scss'
-
-
+import './Login.scss';
+import '../Styles/Reset.scss';
 
 class LoginKim extends React.Component{
   constructor() {
@@ -41,12 +40,11 @@ class LoginKim extends React.Component{
   }
 
   //로그인 버튼 활성화
-
   checkValidation = (e) => {
      e.preventDefault();
     // 구조분해 할당
     const {id_input, pw_input} = this.state;
-
+    
     // 조건을 변수화
     const checkId = id_input.includes("@");
     const checkPw = pw_input.length >= 4;
@@ -69,8 +67,9 @@ class LoginKim extends React.Component{
     render() {
 
       // 버튼 활성화 조건 변수화
+      const {id_input, pw_input} = this.state;
       const activeBtn =
-      (this.state.id_input.length && this.state.pw_input.length) !=0;
+      (id_input.length && pw_input.length) !=0;
      
       
       return (
@@ -84,7 +83,7 @@ class LoginKim extends React.Component{
                 <img src="../image/4.jpg" className="image_ch" alt="이미지4"/>
               </div>
               <div className="art login_box">
-                <div className="login_box top_box">
+                <div className="top_box">
                   <div className="logo_insta">Instagram</div>
                   <div className="box_input_space">
                     <form action="#" method="get" className="login_form">
@@ -120,9 +119,9 @@ class LoginKim extends React.Component{
                     </button>
                     <Link className="pw_lost">비밀번호를 잊으셨나요?</Link>
                   </div> 
-                  <div className=" top_box middle_box">
+                  <div className="middle_box">
                     <div className="register_di">계정이 없으신가요? <Link>가입하기</Link></div>
-                    <div className="login_box under_box">
+                    <div className="under_box">
                       <div className="logo">앱으로 다운로드하세요.</div>
                       <div className="box_space">
                         <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_korean-ko.png/4a5c9d62d51b.png" alt="앱" />

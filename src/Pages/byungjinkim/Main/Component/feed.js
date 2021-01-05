@@ -30,6 +30,7 @@ class feed extends Component {
                   <span className="name">jin</span>
                   <span className="option">...</span>
                 </div>
+                </div>
                 <div className="left_box">
                   <img src className="left_box" alt="이미지"/>
                 </div>
@@ -78,10 +79,9 @@ class feed extends Component {
                     </div>
                   </div>
                 </div>
-                {/* <div className="section right_box">
-                </div> */}
-             </div>
            </div>
+           <div className="section right_box">
+                </div> 
          </section>
       </div>
     );

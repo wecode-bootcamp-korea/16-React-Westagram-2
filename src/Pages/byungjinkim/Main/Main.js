@@ -3,7 +3,7 @@ import Feed from './Component/feed';
 import Nav from './Component/Nav';
 import COMMENT from './Component/data';
 import './Main.scss'
-import '../../../Styles/byungjinkim/Reset.scss'
+import '../Styles/Reset.scss'
 
 class MainKim extends Component {
   //state 초기화
