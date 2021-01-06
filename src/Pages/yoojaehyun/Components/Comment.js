@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 class Comment extends Component {
-    handleDelete = () => {
-        this.props.onHandleDelete(this.props.list);
-    };
     isLikedToggle = () => {
+        this.props.isLikedHandle(this.props.list);
+    };
+    handleDelete = () => {
         this.props.onHandleDelete(this.props.list);
     };
     render() {
@@ -18,7 +18,7 @@ class Comment extends Component {
                     <span className='comment__content'>{content}</span>
                 </div>
                 <div className='like__delete'>
-                    <button className='like__btn'>
+                    <button className='like__btn' onClick={this.isLikedToggle}>
                         <svg
                             aria-label='좋아요 취소'
                             fill=''
@@ -26,7 +26,6 @@ class Comment extends Component {
                             viewBox='0 0 48 48'
                             width='12'>
                             <path
-                                onClick={this.isLikedToggle}
                                 className={`heart  ${
                                     isLiked ? 'heart__fill' : ''
                                 }`}

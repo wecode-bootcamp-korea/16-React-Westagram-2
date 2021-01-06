@@ -13,7 +13,7 @@
                     "id": 2,
                     "userName": "rairai__s",
                     "content": "etc bootcamp! Hello Json!",
-                    "isLiked" : false
+                    "isLiked" : true
                 }
             ]
         }

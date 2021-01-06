@@ -54,13 +54,16 @@ class Feed extends Component {
         }
     };
     handleDelete = (comment) => {
-        const commentLists = this.state.commentList.filter(
+        const commentList = this.state.commentList.filter(
             (item) => item.id !== comment.id
         );
-        this.setState({ commentList: commentLists });
+        this.setState({ commentList: commentList });
     };
-    isLikedToggle = (isLikeds) => {
-        console.log(`${isLikeds.isLiked}`)
+    isLikedToggle = (liked) => {
+        const commentList = this.state.commentList;
+        const index = commentList.indexOf(liked);
+        commentList[index].isLiked = !liked.isLiked;
+        this.setState({ commentList });
     };
     render() {
         const { commentList, commentValue } = this.state;
