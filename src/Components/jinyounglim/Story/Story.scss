@@ -1,0 +1,45 @@
+@import "../../../Styles/jinyounglim/Common.scss";
+
+
+  .story {
+    max-width: 614px;
+    height: 116px;
+    margin: 0 0 24px;
+    padding: 16px;
+    overflow: hidden;
+    background-color: #fff;
+    border: $border-gray;
+    ul {
+      overflow-x: auto;
+      overflow-y: hidden;
+      li {
+        width: 80px;
+        height: 88px;
+        padding: 0 4px;
+        display: inline-block;
+        position: relative;
+      }
+    }
+    .user_profile {
+      width: 66px;
+      height: 66px;
+      &.active {
+        border: 2px double transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(white, white), linear-gradient(45deg, #f99848, #cc3c95);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+      }
+    }
+    .user_id {
+      max-width: 74px;
+      margin: 0;
+      padding: 8px 0 0;
+      overflow: hidden;
+      line-height: 14px;
+      font-size: 1.2rem;
+      letter-spacing: 0.01em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }

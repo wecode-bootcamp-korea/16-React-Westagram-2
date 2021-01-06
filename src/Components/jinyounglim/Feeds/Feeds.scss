@@ -1,0 +1,114 @@
+@import "../../../Styles/jinyounglim/Common.scss";
+
+.feeds {
+  max-width: 614px;
+  margin: 0 28px 0 0;
+  background-color: #fff;
+  border: $border-gray;
+  border-radius: 3px;
+  .feeds_user {
+    height: 60px;
+    padding: 16px;
+    position: relative;
+    .info {
+      display: flex;
+      align-items: center;
+      float: left;
+      overflow: hidden;
+    }
+  }
+  .feeds_content {
+    padding: 0 16px;
+    button {
+      margin: 8px;
+      &.btn_heart {
+        margin: 8px 8px 8px 0;
+      }
+      &.btn_bookmark {
+        margin: 8px 0 0;
+      }
+    }
+    .feeds_txt {
+      .user_id {
+        margin: 0 4px 0 0;
+      }
+    }
+    .txt_time {
+      margin: 0 0 5px 0;
+      color: $sub-color;
+      font-size: 1rem;
+      font-style: normal;
+      letter-spacing: 0.2px;
+      line-height: 1.8rem;
+    }
+    .like_count {
+      margin: 4px 0;
+    }
+    .feeds_txt {
+      p {
+        width: 40%;
+        line-height: 18px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-break: break-all;
+        &.all {
+          width: 100%;
+        }
+        .btn_txt_more {
+          margin: 0;
+          color: $sub-color;
+        }
+      }
+    }
+    .cmt_all {
+      margin: 4px 0;
+      color: $sub-color;
+      cursor: pointer;
+    }
+    .cmt_list {
+      max-height: 36px;
+      overflow: scroll;
+      p {
+        width: 80%;
+      }
+      li {
+        position: relative;
+        .btn_heart {
+          width: 12px;
+          height: 12px;
+          margin: 0 0;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  .cmt_write {
+    width: 100%;
+    min-height: 56px;
+    margin: 4px 0 0 0;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    line-height: 18px;
+    border-top: $border-gray;
+    input {
+      width: 90%;
+      height: 56px;
+      border: none;
+    }
+    .btn_submit {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 16px;
+      color: $high-color;
+      font-weight: $font-bold;
+    }
+  }
+}
