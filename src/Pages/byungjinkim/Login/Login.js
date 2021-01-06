@@ -1,77 +1,78 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import  {LOGIN_API}  from './config';
 import './Login.scss';
 import '../Styles/Reset.scss';
+import '../Styles/Common.scss';
+
 
 class LoginKim extends React.Component{
+
   constructor() {
     super();
     this.state = {
-      id_input: "",
-      pw_input: "",
+      id: "",
+      pw: "",
       hiddenPw: true,
       productList: [],
     };
   }
 
-  //로그인 id
- /* idChange = (e) => {
+  handleInput = (e) => {
     this.setState({
-      id : e.target.value
-    });
+      id: e.target.value,
+    })
   }
 
-  //로그인 pw
- pwChange = (e) => {
+  handlePw = (e) => {
     this.setState({
-      pw : e.target.value
-    });
-  }*/
-  
-  //로그인 id,pw 합치기
-  loginInfo = (e) => {
-    const { id, value} = e.target; 
-    this.setState({ [id]: value});
-  };
-
-  //pw 숨기고 보여주기
-  showPassword = (e) => {
-    this.setState({ hiddenPw: !this.state.hiddenPw});
+      pw: e.target.value,
+    })
   }
 
-  //로그인 버튼 활성화
   checkValidation = (e) => {
-     e.preventDefault();
-    // 구조분해 할당
-    const {id_input, pw_input} = this.state;
-    
-    // 조건을 변수화
-    const checkId = id_input.includes("@");
-    const checkPw = pw_input.length >= 4;
+    e.preventDefault();
+    const { id, pw } = this.state;
 
-    if(checkId && checkPw) {
+    const checkId = id.includes("@");
+    const checkPw = pw.length >= 4;
+
+    if(checkId&&checkPw){
       alert("로그인 성공!");
-      // 로그인이 성공하면 main페이지로 이동해라 ~
-      this.state.history.push("/main");
+      // this.state.history.push("/main");
     }
-
-    if(!checkId){
-      alert("ID는 @가 포함되어야 합니다.");
+    if(!checkId) {
+      alert("@를 포함해주세여!");
     }
 
     if(!checkPw){
-      alert("비밀번호는 4자리 이상이어야 합니다.");
+      alert("비밀번호는 4자리 이상이어야 합니다!");
     }
+  }
 
+  showPassword = (e) => {
+    this.setState({ hiddenPw: {hiddenPw: !this.state.hiddenPw}})
+  }
+  
+  handleButton = (e) => {
+    fetch( {LOGIN_API} , {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    }).then((res) => { return res.json()})
+      .then(result => { console.log({ result });
+    });
   };
-    render() {
 
-      // 버튼 활성화 조건 변수화
-      const {id_input, pw_input} = this.state;
+
+    render() {
+      //버튼 활성화 조건 변수화
+      const {id, pw} = this.state;
       const activeBtn =
-      (id_input.length && pw_input.length) !==0;
-     
-      
+      (id.length && pw.length) !==0;
+
       return (
         <section className="Login">
           <main className="main_westa">
@@ -88,26 +89,31 @@ class LoginKim extends React.Component{
                   <div className="box_input_space">
                     <form action="#" method="get" className="login_form">
                       <input 
-                      id="id_input"
+                      id="id"
                       type="text" 
                       className="box_input"  
                       placeholder="전화번호,사용자 이름 또는 이메일"
-                      value={this.state.id} 
-                      onChange={this.loginInfo}
+                      value={id} 
+                      //onChange={this.loginInfo}
+                      onChange={this.handleInput}
                       />
-                      
                         <input 
-                        id="pw_input"
+                        id="pw"
                         type={this.state.hiddenPw ? "password" : "text" } 
                         className="box_input" 
                         placeholder="비밀번호"
-                        value={this.state.pw}
-                        onChange={this.loginInfo}
+                        value={pw}
+                        //onChange={this.loginInfo}
+                        onChange={this.handlePw}
                         />
-                        <span className="showPw" onClick={this.showPassword}>
-                          {this.state.hiddenPw ? "Show" : "Hide"}</span>
+                        <span 
+                        className="showPw" 
+                        onClick={this.showPassword}>
+                        {this.state.hiddenPw ? "Show" : "Hide"}
+                        </span>
                       <button
                       id="btn_login"
+                     // onClick={this.handleButton}
                       onClick={this.checkValidation}
                       className= {activeBtn ? "active" : ""}        
                       >로그인
@@ -115,12 +121,12 @@ class LoginKim extends React.Component{
                     </form>
                     <div className="login_under_box" />
                     <button type="button" id="btn_face">
-                      <Link><span className="btn_text">Facebook으로 로그인</span></Link>
+                      <span className="btn_text">Facebook으로 로그인</span>
                     </button>
-                    <Link className="pw_lost">비밀번호를 잊으셨나요?</Link>
+                    <a href="#" className="pw_lost">비밀번호를 잊으셨나요?</a>
                   </div> 
                   <div className="middle_box">
-                    <div className="register_di">계정이 없으신가요? <Link>가입하기</Link></div>
+                    <div className="register_di">계정이 없으신가요? <span>가입하기</span></div>
                     <div className="under_box">
                       <div className="logo">앱으로 다운로드하세요.</div>
                       <div className="box_space">

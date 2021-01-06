@@ -80,7 +80,7 @@ class feed extends Component {
                   </div>
                 </div>
            </div>
-           <div className="section right_box">
+           <div className="right_box">
                 </div> 
          </section>
       </div>

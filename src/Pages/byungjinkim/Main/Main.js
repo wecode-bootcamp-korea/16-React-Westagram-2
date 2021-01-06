@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Feed from './Component/feed';
 import Nav from './Component/Nav';
 import COMMENT from './Component/data';
-import './Main.scss'
-import '../Styles/Reset.scss'
+import './Main.scss';
+import '../Styles/Reset.scss';
+
 
 class MainKim extends Component {
   //state 초기화
