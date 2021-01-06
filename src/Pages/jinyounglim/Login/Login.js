@@ -1,4 +1,5 @@
 import React from "react";
+import {} from "../../../config";
 import "./Login.scss";
 
 export class LoginLim extends React.Component {
@@ -18,22 +19,45 @@ export class LoginLim extends React.Component {
   showPassword = e => {
     this.setState({ hiddenPw: !this.state.hiddenPw });
   };
-  checkValidation = e => {
+
+  handleButton = e => {
     e.preventDefault();
 
     const { id, password } = this.state;
     const checkId = id.includes("@");
     const checkPw = password.length >= 4;
 
-    if (checkId && checkPw) {
-      alert("로그인 성공!");
-      this.props.history.push("/main");
-    }
     if (!checkId) {
       alert("아이디는 @를 포함해야 합니다");
+      return;
     }
     if (!checkPw) {
       alert("비밀번호는 4자리 이상이어야 합니다");
+      return;
+    }
+
+    if (checkId && checkPw) {
+      alert("로그인 성공!");
+      this.props.history.push("/main");
+    } else {
+      fetch("", {
+        method: "POST", //method가 get이면 생략 가능(default)
+        body: JSON.stringify({
+          //parse는 원래대로 바꾸는 것, body만 꺼내려고 json을 쓰는 것
+          email: this.state.id,
+          password: this.state.password,
+        }),
+      })
+        .then(response => response.json())
+        .then(result => {
+          console.log({ result });
+
+          if (result.MESSAGE === "SUCCESS") {
+            this.props.history.push("/main");
+          } else {
+            alert("회원가입 실패");
+          }
+        });
     }
   };
 
@@ -54,7 +78,7 @@ export class LoginLim extends React.Component {
                 {this.state.hiddenPw ? "Show" : "Hide"}
               </span>
             </div>
-            <button className={activateBtn ? "active" : ""} onClick={this.checkValidation} onKeyUp={this.checkValidation}>
+            <button className={activateBtn ? "active" : ""} onClick={this.handleButton} onKeyUp={this.handleButton}>
               로그인
             </button>
           </form>

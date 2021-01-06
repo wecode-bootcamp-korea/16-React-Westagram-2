@@ -8,6 +8,7 @@ export class Feeds extends React.Component {
     this.state = {
       cmtInput: "",
       cmtList: [],
+      isLiked: false,
     };
   }
 
@@ -25,10 +26,24 @@ export class Feeds extends React.Component {
           id: Math.random(),
           userName: "jinyoung",
           content: this.state.cmtInput,
+          isLiked: false,
         },
       ]),
       cmtInput: "",
     });
+  };
+
+  activeLikeBtn = e => {
+    const { isLiked } = this.state;
+    this.setState({
+      isLiked: !isLiked,
+    });
+  };
+
+  handleLike = idx => {
+    const likeIdx = this.state.Comment.filter(item => item.id !== idx.id);
+    this.setState({ Comment: likeIdx });
+    console.log(Comment);
   };
 
   render() {
@@ -49,7 +64,9 @@ export class Feeds extends React.Component {
           </li>
         </ul>
         <div className="feeds_content">
-          <button className="btn_heart btn_com">Like</button>
+          <button className={`btn_heart btn_com ${this.state.isLiked ? "on" : ""}`} onClick={this.activeLikeBtn}>
+            Like
+          </button>
           <button className="btn_cmt  btn_com">cmt</button>
           <button className="btn_dm  btn_com">Direct Message</button>
           <button className="btn_bookmark btn_com">Book mark</button>
@@ -66,7 +83,7 @@ export class Feeds extends React.Component {
           <p className="cmt_all">댓글 30개 모두 보기</p>
           <ul className="cmt_list feeds_txt">
             {this.state.cmtList.map(comment => {
-              return <Comment userName={comment.userName} content={comment.content} key={comment.id} />;
+              return <Comment userName={comment.userName} content={comment.content} key={comment.id} list={comment} isLiked={comment.isLiked} activeLikeBtn={this.activeLikeBtn} />;
             })}
           </ul>
           <i className="txt_time">53분 전</i>
