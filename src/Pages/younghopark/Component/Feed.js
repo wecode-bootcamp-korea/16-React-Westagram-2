@@ -49,7 +49,7 @@ class Feed extends Component{
           {commentList.map((el , index) => {
             return (
               <Comment 
-                keys ={index}
+                key={index}
                 user={el.userName}
                 content={el.content}
               />

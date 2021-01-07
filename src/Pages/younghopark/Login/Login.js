@@ -70,7 +70,6 @@ class LoginPark extends Component {
     e.preventDefault();
 
     const {id, password} = this.state;
-    const checkId = id.includes("@");
     const checkPw = password.length >= 5;
 
     fetch(SIGNUP_API, {
@@ -83,10 +82,10 @@ class LoginPark extends Component {
       .then(response => response.json())
       .then(result => {
         console.log({result});
-        if(checkId && checkPw){
+        if(result.message === "SUCCESS"){
           alert("회원가입 성공");
         }
-        if(!checkId){
+        if(result.message === "INVALID_EMAIL"){
           alert("이메일 형식이 잘못되었습니다.")
         }
         if(!checkPw){
