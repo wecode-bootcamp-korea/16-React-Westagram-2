@@ -6,7 +6,6 @@ import Comment from './Comment';
 class Feed extends Component{
   constructor() {
     super()
-
     this.state = {
       commentValue: '',
       commentList: [] 
@@ -33,7 +32,7 @@ class Feed extends Component{
         ...commentList,
         {
           id: commentList.length + 1,
-          userName: 'youngho',
+          userName: '영호박',
           content: commentValue,
         }
       ],
@@ -47,37 +46,33 @@ class Feed extends Component{
     return(
       <div className="Feed">
         <div className="Comment">
-          <div className="commentMes">
-            <div className="message">
-            {commentList.map((el , index) => {
-              return (
-                <Comment 
-                  keys ={index}
-                  user={el.userName}
-                  content={el.content}
-                />
-              )
-            })}
-            </div>
+          {commentList.map((el , index) => {
+            return (
+              <Comment 
+                keys ={index}
+                user={el.userName}
+                content={el.content}
+              />
+            )
+          })}
           <span className="date">1일전</span>
-        </div>
         </div>
         <div className="inputContainer">
           <form className="typeComment">
             <input 
-              className="inputBox" 
               type="text"
               placeholder="댓글 달기..." 
               id = "item"
+              className="inputBox" 
               onChange={this.handleCommentValue}
               value={commentValue}
             />
            </form> 
           <button 
-            className="buttonBox" 
             type="button"
-            onClick={this.addComment}
             id ="submit"
+            className="buttonBox"
+            onClick={this.addComment}
           >
             게시
           </button>

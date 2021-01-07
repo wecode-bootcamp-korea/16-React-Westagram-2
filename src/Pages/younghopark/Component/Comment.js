@@ -8,7 +8,7 @@ class Comment extends Component{
 
   render(){
     return(
-      <div className="user" key={this.props.keys}>
+      <div className="CommentMessage" key={this.props.keys}>
         <span className="userName">{this.props.user}</span>
         <span className="content">{this.props.content}</span>
       </div>

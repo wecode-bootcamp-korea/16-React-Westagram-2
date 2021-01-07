@@ -1,29 +1,19 @@
 .main {
   width: 1000px;
   margin: 0 auto;
-  
-  .header{
+
+  .Navbar {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 54px;
-    background-color: #fff;
 
-    .Navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 1000px;
-
-      .instar{
-
-        h1 {
-          font-size: 20px;
-          font-family: 'Lobster', cursive;
-        }
+    .WestarLogo {
+      h1 {
+        font-size: 20px;
+        font-family: 'Lobster', cursive;
       }
     }
-
     .searchBox {
       position: relative;
 
@@ -34,7 +24,7 @@
         border: none;
       }
 
-      i{
+      #SearchIcon {
         position: absolute;
         left: 85px;
         top: 7px;
@@ -51,27 +41,17 @@
       }
     }
 
-    .icon{
-
-      .homeIcon{
-        width: 20px;
-        margin-right: 20px;
-      }
-      
-      .heartIcon{
-        width: 20px;
-        margin-right: 20px;
-      }
-      
-      .userIcon{
+    .NavIcon {
+      .Icon {
         width: 20px;
         margin-right: 20px;
       }
     }
   }
+
   // Navbar
 
-  .LeftCont{
+  .LeftCont {
     position: relative;
     width: 612px;
     height: 118px;
@@ -93,216 +73,207 @@
         justify-content: center;
         width: 66px;
         height: 66px;
-        background-image: url("../img/rainbow.png");
+        background-image: url('../Images/rainbow.png');
         background-size: contain;
 
-        .userName {
-          
-          img {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            top: 50%;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #fff;
-          }
-          span {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            width: max-content;
-            top: 120%;
-            left: 50%;
-            font-size: 13px;
-          }
+        img {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          top: 50%;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-color: #fff;
+        }
+        span {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          width: max-content;
+          top: 120%;
+          left: 50%;
+          font-size: 13px;
         }
       }
     }
-  
 
-  .subCont {
-    position: relative;
-    width: 612px;
-    height: 60px;
-    top: 70px;
-    background-color: #fff;
-    border-radius: 3px;
-    border: 1px solid #e4e1e1;
-
-    .introName {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      left: 20px;
-      top: 10px;
-      background-image: url("../img/rainbow.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-
-      img {
-        position: absolute;
-        width: 35px;
-        height: 35px;
-        left: 3px;
-        top: 3px;
-      }
-
-      span {
-        position: absolute;
-        left: 60px;
-        top: 7px;
-        font-size: 20px;
-        font-weight: normal;
-      }
-    }
-    .option{
-      position: absolute;
-      left: 550px;
-      top: 23px;
-
-      img {
-        width: 18px;
-        height: 18px;
-      }
-    }
-  }
-  .contImg {
-    position: relative;
-    top: 70px;
-
-    img {
-      max-width: 614px;
-      height: 645px;
-    }
-  }
-  .CommentIcon {
-    position: relative;
-    display: flex;
-    text-align: center;
-    justify-content: space-between; 
-    width: 600px;
-    height: 40px;
-    top: 75px;
-    border-radius: 3px;
-    z-index: 3;
-
-    img {
-      width: 20px;
-      height: 20px; 
-    }
-    .leftIcon {
-      display: flex;
-
-      img {
-        padding: 0 0 0 10px;
-      }
-    }
-  }
-  .good {
-    position: relative;
-    left: 10px;
-    top: 60px;
-    z-index: 2;
-    font-size: 13px;
-  }
-
-  .Feed {
-    position: relative;
-    height: 200px;
-    top: 8px;
-    border-radius: 3px;
-    border: 1px solid #e4e1e1;
-    background-color: #fff;
-    z-index: 1;
-
-    .Comment{
-      position: absolute;
-      top: 60px;
-      left: 10px;
-      font-size: 12px;
-     
-      .message{
-
-        .content{
-          margin-left: 15px;
-        }
-      }
-
-      .date{
-        color: #a0a0a0;
-        font-size: 5px;
-      }
-    }
-  }
-  .inputContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 150px;
-    height: 50px;
-    padding: 0 12px 0 12px;
-    border-top: 1px solid #e4e1e1;
-
-    .inputBox{
-      font:14px;
-      color: black;
-      outline: none;
-      width:520px;
-      height: 40px;
-      border: solid 0px;
-    }
-
-    .buttonBox{
-      color:#C0E0FD;
-      width: 60px;
-      height: 40px;
-      outline: none;
+    .FeedBar {
+      position: relative;
+      width: 612px;
+      height: 60px;
+      top: 70px;
       background-color: #fff;
-      border: solid 0px;
-      cursor: pointer;
+      border-radius: 3px;
+      border: 1px solid #e4e1e1;
+
+      .FeedImage {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 20px;
+        top: 10px;
+        background-image: url('../Images/rainbow.png');
+        background-size: contain;
+
+        img {
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          left: 3px;
+          top: 3px;
+        }
+
+        span {
+          position: absolute;
+          left: 60px;
+          top: 7px;
+          font-size: 20px;
+          font-weight: normal;
+        }
+      }
+      .More {
+        position: absolute;
+        left: 550px;
+        top: 23px;
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    .MainImage {
+      position: relative;
+      top: 70px;
+
+      img {
+        max-width: 614px;
+        height: 645px;
+      }
+    }
+    .CommentIcon {
+      position: relative;
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+      width: 600px;
+      height: 40px;
+      top: 75px;
+      border-radius: 3px;
+      z-index: 3;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+      .StateIcon {
+        display: flex;
+
+        img {
+          padding: 0 0 0 10px;
+        }
+      }
+    }
+    .Like {
+      position: relative;
+      left: 10px;
+      top: 60px;
+      z-index: 2;
+      font-size: 13px;
+    }
+
+    .Feed {
+      position: relative;
+      height: 200px;
+      top: 8px;
+      border-radius: 3px;
+      border: 1px solid #e4e1e1;
+      background-color: #fff;
+      z-index: 1;
+
+      .Comment {
+        position: absolute;
+        top: 55px;
+        left: 10px;
+        font-size: 12px;
+
+        .CommentMessage {
+          .content {
+            margin-left: 15px;
+          }
+        }
+
+        .date {
+          color: #a0a0a0;
+          font-size: 5px;
+        }
+      }
+    }
+    .inputContainer {
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: 150px;
+      height: 50px;
+      padding: 0 12px 0 12px;
+      border-top: 1px solid #e4e1e1;
+
+      .inputBox {
+        color: black;
+        outline: none;
+        width: 520px;
+        height: 40px;
+        border: solid 0px;
+      }
+
+      .buttonBox {
+        color: #c0e0fd;
+        width: 60px;
+        height: 40px;
+        outline: none;
+        background-color: #fff;
+        border: solid 0px;
+        cursor: pointer;
+      }
     }
   }
-}
   //LeftCont
 
-  .rightCont {
+  .RightCont {
     position: fixed;
     left: 1100px;
     top: 100px;
 
-    .myprofile{
+    .Myprofile {
       display: flex;
       justify-content: space-between;
       width: 350px;
 
-      img{
+      img {
         width: 55px;
       }
 
-      .change{
+      .yourProfile {
+        display: flex;
+
+        .MyprofileId {
+          display: flex;
+          flex-direction: column;
+          padding: 5px 0 0 25px;
+        }
+      }
+
+      .Change {
         padding: 15px 0 0 0;
 
-        a{
+        a {
           font-size: 12px;
-          color:rgb(138, 138, 255);
+          color: rgb(138, 138, 255);
         }
       }
     }
 
-    .yourProfile{
-      display: flex;
-      flex-direction: row;
-    }
-
-    .myprofileId {
-      display: flex;
-      flex-direction: column;
-      padding: 5px 0 0 30px;
-    }
-
-    .userprofile{
+    .userprofile {
       display: flex;
       justify-content: space-between;
       position: relative;
@@ -310,45 +281,48 @@
       height: 60px;
       top: 40px;
 
-      img{
+      .userPro {
+        display: flex;
+      }
+
+      img {
         width: 45px;
         height: 45px;
         border-radius: 50%;
       }
 
-      .userPro{
-        display: flex;
-      }
-
-      .userprofileId{
+      .userprofileId {
         display: flex;
         flex-direction: column;
         padding: 4px 0 0 20px;
         font-size: 13px;
       }
 
-      .change{
+      .Followed {
         padding: 15px 0 0 0;
 
-        a{
+        a {
           font-size: 12px;
-          color:rgb(138, 138, 255);
+          color: rgb(138, 138, 255);
         }
       }
     }
-  }
-  .other_box{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 50px;
 
-    .otherSpan {
-      font-size:11px;
-      color:#c7c7c7;
+    .other_box {
+      position: relative;
+      top: 50px;
+      left: -30px;
+
+      .otherSpan {
+        float: left;
+        font-size: 11px;
+        list-style: none;
+        color: #c7c7c7;
+      }
     }
-  }
-  .InstarFace{
-    margin-top: 70px;
+    .InstarFace {
+      margin-top: 110px;
+      margin-left: 10px;
+    }
   }
 }
