@@ -1,0 +1,144 @@
+
+
+.art{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 30px;
+
+  .main_img{
+    position: relative;
+    height: 618px;
+    width: 454px;
+    background-image: url('https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png');
+    .image_ch{
+      position: absolute;
+      height: 431px;
+      top: 98px;
+      left: 150px;
+    }
+  }
+}
+
+.login_box{
+  width: 350px;
+  height: 610px;
+  .top_box{
+    height: 570px;
+    border: 1px solid lightgray;
+    .logo_insta{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      margin: 30px 0;
+      font-size: 32px;
+      font-family: cursive;
+    }
+    .box_input_space{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .box_input{
+        width: 280px;
+        height: 37px;
+        margin: 2px 0;
+        padding-left: 10px;
+        border: 1px solid lightgray;
+        font-size: 14px;
+      }
+      .login_form{
+        position: relative;
+        left: 35px;
+        .showPw{
+          position: relative;
+          right: 45px;
+          cursor: pointer;
+        }
+        #btn_login{
+          width: 295px;
+          height: 30px;
+          margin-top: 10px;
+          color: white;
+          background-color: lightskyblue;
+          border: 1px solid lightgrey;
+          font-weight: bold;
+          &.active{
+              background-color: #055cb0;
+          }
+        }
+      }
+      .pw_lost{
+        color: #00498c;
+        font-size: 12px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+
+.middle_box{
+  position: relative;
+  height: 10vh;
+  top: 40px;
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  .register_di{
+    position: relative;
+    top: 30px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .under_box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    top: 75px;
+    .logo{
+      text-align: center;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+    .box_space{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  .under_box img{
+    width: 135px;
+    height: 40px;
+    padding: 10px 7px;
+    }
+}
+
+#btn_face{
+  background-color: white;
+  border: 0px solid;
+  .btn_text{
+    color: #00498c;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.login_under_box{
+  height: 1px;
+  width: 290px;
+  margin: 20px;
+  border: 1px solid lightgrey;
+  
+}
+
+.ft_main{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  color: #8e8e8e;
+  font-size: 13px;
+}
+
