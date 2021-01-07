@@ -58,20 +58,25 @@
         cursor: pointer;
       }
     }
-    
-    button {
-      width: 268px;
-      height: 30px;
+    .LoginSignupBtn {
       margin: 8px 40px; 
-      border-radius: 5px;
-      background-color:#b2dffc;
-      font-weight: 600;
-      color: #fff;
-      border:none;
-      outline: none;
 
-      &.active {
-        background-color: #055cb1;
+      button {
+        width: 268px;
+        height: 30px;
+        border-radius: 5px;
+        background-color:#b2dffc;
+        font-weight: 600;
+        color: #fff;
+        border:none;
+        outline: none;
+    
+        &.active {
+          background-color: #055cb1;
+        }
+      }
+      .Signup {
+        margin-top: 5px;
       }
     }
     

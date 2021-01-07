@@ -1,1 +1,15 @@
+html, body, span, p {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+ol, ul {
+	list-style: none;
+}
+input,button{
+	outline: none;
+	border:0;
+}
 a{text-decoration: none;}

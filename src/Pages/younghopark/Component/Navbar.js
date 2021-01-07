@@ -8,7 +8,7 @@ class Navbar extends Component{
   render() {
     return(
       <div className="Navbar">
-        <div clclassNameass="instar">
+        <div className="instar">
           <h1>Westargram</h1>
         </div>
         <div className="searchBox">

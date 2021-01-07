@@ -1,6 +1,6 @@
 import './Login.scss';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { SIGNUP_API, SIGNIN_API } from "../Component/Config";
 
 class LoginPark extends Component {
   constructor() {
@@ -33,30 +33,74 @@ class LoginPark extends Component {
   showPassword = (e) => {
     this.setState({ hiddenPw : !this.state.hiddenPw });
   };
-
+  
   //로그인 조건
   checkValidation = (e) => {
     e.preventDefault();
     //구조분해 할당 = 비구조화
     const {id, password} = this.state;
-    const checkId = id.includes("@");
-    const checkPw = password.length >= 4;
 
-    if(checkId && checkPw){
-      alert("로그인 성공");
-      this.props.history.push("/main-park")
-    }
-    if(!checkId){
-      alert("아이디는 @를 포함해야 합니다.")
-    }
-    if(!checkPw){
-      alert("비밀번호는 4자리 이상이어야 합니다.")
-    }
+    fetch(SIGNIN_API, {
+      method: "POST",
+      body: JSON.stringify({
+        email: id,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        console.log({result});
+        localStorage.setItem("token", result.Authorization);
+        
+        if(result.message ==="SUCCESS"){
+          alert("로그인성공")
+          this.props.history.push("/main-park");
+          return;
+        }
+
+        if(result.message !== "SUCCESS"){
+          alert("로그인실패");
+        }
+      
+      });
   };
 
+  //회원가입 조건
+  checkSignup = (e) =>{
+    e.preventDefault();
+
+    const {id, password} = this.state;
+    const checkId = id.includes("@");
+    const checkPw = password.length >= 5;
+
+    fetch(SIGNUP_API, {
+      method: "POST",
+      body: JSON.stringify({
+        email: id,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        console.log({result});
+        if(checkId && checkPw){
+          alert("회원가입 성공");
+        }
+        if(!checkId){
+          alert("이메일 형식이 잘못되었습니다.")
+        }
+        if(!checkPw){
+          alert("비밀번호는 5자리 이상이어야 합니다.")
+        }
+      });
+  }
+
   render() {
+    const { id, password, hiddenPw} = this.state;
+    console.log({ id, password});
+    
     const activateBtn =
-     (this.state.id.length && this.state.password.length)  != 0;
+     (this.state.id.length && this.state.password.length)  !== 0;
 
     return (
       <div className="Login">
@@ -70,7 +114,7 @@ class LoginPark extends Component {
               className="userId" 
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"  
-              value={this.state.id}
+              value={id}
               onChange={this.handleLoginInfo}
             />
           </div>
@@ -78,23 +122,31 @@ class LoginPark extends Component {
             <input 
               id="password"
               className="userPw" 
-              type={this.state.hiddenPw ? "password" : "text" }
+              type={hiddenPw ? "password" : "text" }
               placeholder="비밀번호"
-              value={this.state.password}
+              value={password}
               onChange={this.handleLoginInfo}
             />
             <span className ="showPw" onClick={this.showPassword}>
-              {this.state.hiddenPw ? "Show" : "Hide"}
+              {hiddenPw ? "Show" : "Hide"}
             </span>
           </div>
-          <button 
-            id="loginBtn"
-            onClick={this.checkValidation}
-            className ={activateBtn ? "active" : ""}>
-            로그인
-          </button>
+          <div className="LoginSignupBtn">
+            <button 
+              id="loginBtn"
+              onClick={this.checkValidation}
+              className ={activateBtn ? "active" : ""}>
+              로그인
+            </button>
+            <button 
+              id="SiginupBtn"
+              onClick={this.checkSignup}
+              className="Signup">
+              회원가입
+            </button>
+          </div>
           <div className="forgetBtn">
-            <a className="forgetPw">비밀번호를 잊으셨나요?</a>
+            <span className="forgetPw">비밀번호를 잊으셨나요?</span>
           </div>
         </div>
       </div>
