@@ -5,20 +5,20 @@ import {
   Route,
 } from 'react-router-dom';
 
-import LoginPark from './pages/younghopark/Login/Login';
-import MainPark from './pages/younghopark/Main/Main';
+import LoginPark from './Pages/younghopark/Login/Login';
+import MainPark from './Pages/younghopark/Main/Main';
 
 // 임진영 컴포넌트
-import LoginLim from './pages/jinyounglim/Login/Login';
-import MainLim from './pages/jinyounglim/Main/Main';
+import { LoginLim } from './Pages/jinyounglim/Login/Login';
+import { MainLim } from './Pages/jinyounglim/Main/Main';
 
 // 유재현 컴포넌트
-import LoginYoo from './pages/yoojaehyun/Login/Login';
-import MainYoo from './pages/yoojaehyun/Main/Main';
+import { LoginYoo } from './Pages/yoojaehyun/Login/Login';
+import { MainYoo } from './Pages/yoojaehyun/Main/Main';
 
 // 김병진 컴포넌트
-import LoginKim from './pages/byungjinkim/Login/Login';
-import MainKim from './pages/byungjinkim/Main/Main';
+import { LoginKim } from './Pages/byungjinkim/Login/Login';
+import { MainKim } from './Pages/byungjinkim/Main/Main';
 
 
 
@@ -38,7 +38,7 @@ class Routes extends React.Component {
           <Route exact path='/main-yoo' component={MainYoo} />
             
           <Route exact path='/login-kim' component={LoginKim} />
-          <Route exact path='/main-kim' component={MainKim} />
+          <Route exact path='/main-kim' component={MainKim} /> 
         </Switch>
       </Router>
       )

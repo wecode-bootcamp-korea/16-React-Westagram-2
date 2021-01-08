@@ -1,0 +1,96 @@
+.Login {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+
+  .container {
+    position: relative;
+    width: 350px;
+    height: 380px;
+    padding: 10px 0;
+    background: #ffffff;
+    border: 1px solid #000;
+    border-radius: 1px;
+
+    .logo {
+      width: 175px;
+      height: 51px;
+      margin: 15px 75px 12px;
+      font-family: 'Lobster', cursive;
+
+      h1 {
+        font-size: 30px;
+        color : #262626;
+      }
+    }
+  
+    .idForm {
+      position: relative;
+
+      .userId {
+        width: 260px;
+        height: 36px;
+        background: #fafafa;
+        margin: 5px 0 0 40px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        outline: none;
+      }
+    }
+    
+    .pwForm {
+      position: relative;
+
+      .userPw {
+        width: 260px;
+        height: 36px;
+        background: #fafafa;
+        margin: 5px 0 0 40px;  
+        border: 1px solid gray;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      .showPw {
+        position: relative;
+        left: -50px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+    .LoginSignupBtn {
+      margin: 8px 40px; 
+
+      button {
+        width: 268px;
+        height: 30px;
+        border-radius: 5px;
+        background-color:#b2dffc;
+        font-weight: 600;
+        color: #fff;
+        border:none;
+        outline: none;
+    
+        &.active {
+          background-color: #055cb1;
+        }
+      }
+      .Signup {
+        margin-top: 5px;
+      }
+    }
+    
+    .forgetBtn {
+      position: relative;
+      top: 50px;
+      text-align: center;
+
+      .forgetPw{
+        text-decoration: none;
+        color: #000;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
