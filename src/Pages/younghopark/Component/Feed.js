@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import '../Main/Main.scss';
-import CommentData from './Data';
 import Comment from './Comment';
+import '../Main/Main.scss';
 
 class Feed extends Component{
   constructor() {
@@ -13,14 +12,20 @@ class Feed extends Component{
   }
 
   componentDidMount() {
-    this.setState({
-      commentList: CommentData
-    });
+    fetch('http://localhost:3000/data/CommentData.json',{
+
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          commentList : data,
+        });
+      });
   }
 
   handleCommentValue = e => {
     this.setState({
-      commentValue : e.target.value
+      commentValue: e.target.value
     });
   }
 
@@ -46,12 +51,12 @@ class Feed extends Component{
     return(
       <div className="Feed">
         <div className="Comment">
-          {commentList.map((el , index) => {
+          {commentList.map((comment , index) => {
             return (
               <Comment 
                 key={index}
-                user={el.userName}
-                content={el.content}
+                user={comment.userName}
+                content={comment.content}
               />
             )
           })}

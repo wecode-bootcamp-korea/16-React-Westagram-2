@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import '../Main/Main.scss';
 import { Link } from 'react-router-dom';
 import users from '../Images/user.png';
 import picture2 from '../Images/picture2.png';
 import picture3 from '../Images/picture3.png';
 import picture4 from '../Images/picture4.png';
 import picture5 from '../Images/picture5.png';
+import '../Main/Main.scss';
 
-const USERPROFILE =[
+const USER_PROFILE =[
   {id:0, UserProfile:picture2, UserName:'Leo Messi', Follow: 'Follows You', Link:'팔로우'},
   {id:0, UserProfile:picture3, UserName:'Neymar JR', Follow: 'Follows You', Link:'팔로우'},
   {id:0, UserProfile:picture4, UserName:'Luis Suarez', Follow: 'Leo Messi님 외 2명이 팔로우 합니다.', Link:'팔로우'},
@@ -44,7 +44,7 @@ class RightFeed extends Component{
             <Link to="./"><span>전환</span></Link>
           </div>
         </div>
-        {USERPROFILE.map((el) =>{
+        {USER_PROFILE.map((el) =>{
           return(
             <div className="userprofile">
               <div className="userPro">
@@ -60,9 +60,9 @@ class RightFeed extends Component{
             </div>
           )
         })}
-        {FOOTER.map((el) =>{
+        {FOOTER.map((el, index) =>{
           return(
-            <div className="other_box">
+            <div className="other_box" key={index}>
               <ul className="other">
                 <li className="otherSpan">{el.Menu} ∙</li>
               </ul>

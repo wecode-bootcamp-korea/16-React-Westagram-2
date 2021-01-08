@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../Main/Main.scss';
 import Feed from '../Component/Feed';
 import picture1 from '../Images/picture1.png';
 import picture2 from '../Images/picture2.png';
@@ -14,6 +13,7 @@ import more from '../Images/more.png';
 import bubble from '../Images/speech-bubble.png';
 import plane from '../Images/paper-plane.png';
 import bookmark from '../Images/bookmark.png';
+import '../Main/Main.scss';
 
 const PROFILE = [
   { id: 0, ProfileImg: picture1, name: "son"},
@@ -30,9 +30,9 @@ class LeftCont extends Component{
     return(
       <div className="LeftCont">
         <ul className="storyList">
-          {PROFILE.map((element)=>{
+          {PROFILE.map((element, index)=>{
             return(
-              <li className="storyName">
+              <li className="storyName" key={index}>
                 <img src={element.ProfileImg} alt="프로필" />
                 <span>{element.name}</span>
               </li>

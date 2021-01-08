@@ -1,6 +1,6 @@
-import './Login.scss';
 import React, { Component } from 'react';
 import { SIGNUP_API, SIGNIN_API } from "../Component/Config";
+import './Login.scss';
 
 class LoginPark extends Component {
   constructor() {
@@ -12,14 +12,6 @@ class LoginPark extends Component {
       productList: [],
     };
   }
-
-  // handleIdChange = (e) =>{
-  //   this.setState({id : e.target.value});
-  // };
-  
-  // handlePasswordChange = (e) =>{
-  //   this.setState({password : e.target.value});
-  // };
 
   //아이디 비밀번호 저장
   handleLoginInfo = (e) =>{
@@ -49,7 +41,6 @@ class LoginPark extends Component {
     })
       .then(response => response.json())
       .then(result => {
-        console.log({result});
         localStorage.setItem("token", result.Authorization);
         
         if(result.message ==="SUCCESS"){
@@ -81,7 +72,6 @@ class LoginPark extends Component {
     })
       .then(response => response.json())
       .then(result => {
-        console.log({result});
         if(result.message === "SUCCESS"){
           alert("회원가입 성공");
         }
@@ -96,10 +86,9 @@ class LoginPark extends Component {
 
   render() {
     const { id, password, hiddenPw} = this.state;
-    console.log({ id, password});
     
     const activateBtn =
-     (this.state.id.length && this.state.password.length)  !== 0;
+     (id.length && password.length)  !== 0;
 
     return (
       <div className="Login">

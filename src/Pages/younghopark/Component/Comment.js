@@ -3,14 +3,15 @@ import React, { Component } from "react";
 class Comment extends Component{
   constructor(props) {
     super(props);
-    this.state = {}
   }
 
   render(){
+    const {key, user, content} = this.props;
+
     return(
-      <div className="CommentMessage" key={this.props.key}>
-        <span className="userName">{this.props.user}</span>
-        <span className="content">{this.props.content}</span>
+      <div className="CommentMessage" key={key}>
+        <span className="userName">{user}</span>
+        <span className="content">{content}</span>
       </div>
     )
   }
