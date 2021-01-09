@@ -1,0 +1,64 @@
+{
+  "status":"200",
+    "data":{
+      "item":{
+        "feedDatas":[
+        {
+          "id": 1,
+          "profile":{
+            "img":"https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/130722089_199461338387403_5694412873420260188_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=m7pdca2wlSsAX-_9y09&tp=1&oh=bb57f2eba62a22baef60a6b78c4dbe13&oe=6021CB9A",
+            "name":"spursofficial"
+          },
+          "mainImg":"https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/135350383_1035152296971166_8043747960130638031_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=1&_nc_ohc=2sa4SqEfr0QAX_D-PNe&tp=1&oh=8dee406d2354b482b3557f53be8f5f6b&oe=60215534",
+          "totalLiked":"135,780",
+          "mainImgName":"Tottenham",
+          "myComment":"Sunday, April 25: 𝗪𝗲'𝗿𝗲 𝗴𝗼𝗶𝗻𝗴 𝘁𝗼 𝗪𝗲𝗺𝗯𝗹𝗲𝘆.",
+          "follow":[
+            {
+              "id":1,
+              "userName":"code_kunst",
+              "comment":"please ... 😍",
+              "isLiked":false
+            },
+            {
+              "id":2,
+              "userName":"material_mak",
+              "comment":"Is this available for international fans?",
+              "isLiked":false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "profile":{
+            "img":"https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/131410874_138371911407913_481752322904825686_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=I4yoKVAfD3EAX9WCDek&tp=1&oh=24e771f45984b8a8cb0431bfe90b9f48&oe=6021148E",
+            "name":"leehi_hi"
+          },
+          "mainImg":"https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/135740006_693461131316369_1377784695275454481_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=1&_nc_ohc=NB1raQ4WZ7EAX8yiCqi&tp=1&oh=03c441e6773beed1620ebca537af2799&oe=6021867B",
+          "mainImgName":"이하이",
+          "myComment":"상의 향기에 취한다...2020년 저의 새로운 시작을 알린 싱글 ‘홀로’가 지니뮤직어워드 R&B 소울 부문에서 상을 탔다고 하네요! 지난 한해동안 저의 음악을 함께 들어주신 모든 분들 진심으로 감사드려요💕🥺💕 ",
+          "totalLiked":"225,780",
+          "follow":[
+            {
+              "id":1,
+              "userName":"wecode",
+              "comment":"please ... 😍 react!!!",
+              "isLiked":false
+            },
+            {
+              "id":2,
+              "userName":"taeng9",
+              "comment":"Is this available for international fans? yes or not",
+              "isLiked":false
+            }
+          ]
+        }
+
+      ]
+    }
+  }
+}
+    
+
+
+

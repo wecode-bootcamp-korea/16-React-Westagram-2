@@ -1,34 +1,63 @@
 import React, { Component } from 'react';
-import Navbar from '../Components/Navbar';
 import '@fortawesome/fontawesome-free/js/all';
-import '../../../Styles/yoojaehyun/Common.scss';
+
+import Navbar from '../Components/Navbar';
+import Followers from '../Components/Feed/Follows';
+import Feed from '../Components/Feed/Feeds';
+import RightFeed from '../Components/RightFeed/RightFeed';
+
 import '../Main/Main.scss';
 
-import Feed from '../Components/Feed';
-import RightFeed from '../Components/RightFeed/RightFeed';
-import Follows from '../Components/Follows/Follows';
-
 class Main extends Component {
-    render() {
-        return (
-            <div className='main'>
-                <Navbar />
-                <main className='main__container'>
-                    <section className='feeds__container'>
-                        <div className='feeds'>
-                            <article>
-                                <Follows />
-                                <Feed />
-                            </article>
-                            <article className='right__feed'>
-                                <RightFeed />
-                            </article>
-                        </div>
-                    </section>
-                </main>
-            </div>
-        );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      feedDataList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/FeedData.json')
+      .then((res) => res.json())
+      .then((result) => {
+        this.setState({ feedDataList: result.data.item.feedDatas });
+      });
+  }
+
+  updateList = (feedId, commentList) => {
+    const { feedDataList } = this.state;
+    const updateFeed = feedDataList.map((feed) =>
+      feed.id === feedId ? { ...feed, follow: commentList } : feed
+    );
+    this.setState({ feedDataList: updateFeed });
+  };
+  render() {
+    const { feedDataList } = this.state;
+    return (
+      <div className='Main'>
+        <Navbar />
+        <main className='mainContainer'>
+          <div className='feeds'>
+            <article>
+              <Followers />
+              {feedDataList.map((feedData) => {
+                return (
+                  <Feed
+                    key={feedData.id}
+                    feed={feedData}
+                    updataFeed={this.updateList}
+                  />
+                );
+              })}
+            </article>
+            <article>
+              <RightFeed />
+            </article>
+          </div>
+        </main>
+      </div>
+    );
+  }
 }
 
 export default Main;
